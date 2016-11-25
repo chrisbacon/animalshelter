@@ -20,7 +20,8 @@ class Pet
     end
 
     def is_adoptable?
-        return is_adoptable_on?(Date.today)
+        return "Ready for adoption!" if is_adoptable_on?(Date.today)
+        return "Will soon be ready to be rehomed"
     end
 
     def save()

@@ -3,13 +3,13 @@
 <div id="content">
     <% for pet in @pets %>
         <ul class="pet">
-            <li>name: <%= pet.name %></li>
-            <li>species: <%= pet.species %></li>
-            <li>entry: <%= pet.entry %></li>
+            <li>Name: <%= pet.name %></li>
+            <li>Species: <%= pet.species %></li>
+            <li>Date rescued: <%= pet.entry %></li>
             <% if pet.owner %>
-            <li>owner: <%= pet.owner.name %></li>
+            <li>Owner: <%= pet.owner.name %></li>
             <% else %>
-            <li>available: <%= pet.is_adoptable? %></li>
+            <li>Status: <%= pet.is_adoptable? %></li>
             <% end %>
             
 
