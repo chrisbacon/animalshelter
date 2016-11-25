@@ -11,6 +11,11 @@ class Pet
         @id = options['id'].to_i if options['id']
         @owner_id = options['owner_id'].to_i if options['owner_id']
     end
+
+    def is_adoptable_on?(date)
+        minimum_stay = 10
+        return (date - @entry) >= minimum_stay
+    end
     
     def save()
         sql = "

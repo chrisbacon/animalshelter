@@ -2,7 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('models/pet')
 
-get '/' do
+get '/pets' do
     @pets = Pet.all()
     erb(:index)
 end

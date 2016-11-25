@@ -12,5 +12,10 @@ class TestPet < Minitest::Test
         test_date = Date.new(2016, 8, 26)
         assert_equal(test_date, @pet.entry)
     end
+
+    def test_pet_is_adoptable__adoptable
+        test_date = Date.new(2016,9, 11)
+        assert_equal(true, @pet.is_adoptable_on?(test_date))
+    end
     
 end
