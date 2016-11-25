@@ -33,6 +33,13 @@ class Pet
     end
 
     def update()
+        sql = "
+        UPDATE pets
+        (owner_id, exit)
+        =
+        (#{@owner_id}, '#{@exit}')
+        WHERE id = #{@id}
+        ;"
     end
 
     def self.find(id)

@@ -21,11 +21,6 @@ class Customer
         @id = result[0]['id']
     end
 
-    def adopt(pet)
-        pet.owner_id = @id
-        pet.update()
-    end
-
     def self.find(id)
         sql = "
         SELECT * FROM customers
