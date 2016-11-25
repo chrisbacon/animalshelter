@@ -8,7 +8,6 @@ class Pet
         @species = options['species']
         @entry = Date.parse(options['entry'])
 
-        @exit = nil
         @exit = Date.parse(options['exit']) if options['exit']
         @id = options['id'].to_i if options['id']
         @owner_id = options['owner_id'].to_i if options['owner_id']
@@ -29,11 +28,18 @@ class Pet
     end
 
     def save()
+        #prepare optional values for SQL string
+        owner_id_value = "NULL"
+        owner_id_value = "#{@owner_id}" if @owner_id
+
+        exit_value = "NULL"
+        exit_value = "'#{@exit}'" if @exit
+
         sql = "
         INSERT INTO pets
-        (name, species, entry)
+        (name, species, entry, exit, owner_id)
         VALUES
-        ('#{@name}', '#{@species}', '#{@entry}')
+        ('#{@name}', '#{@species}', '#{@entry}', #{exit_value}, #{owner_id_value})
         returning *
         ;"
 
@@ -44,11 +50,18 @@ class Pet
 
     def update()
         return unless @id
+        #prepare optional values
+        owner_id_value = "NULL"
+        owner_id_value = "#{@owner_id}" if @owner_id
+
+        exit_value = "NULL"
+        exit_value = "'#{@exit}'" if @exit
+
         sql = "
         UPDATE pets
-        SET (owner_id)
+        SET (name, species, entry, exit, owner_id)
         =
-        (#{@owner_id})
+        ('#{@name}', '#{@species}', '#{@entry}', #{exit_value}, #{owner_id_value})
         WHERE id = #{@id}
         ;"
 
