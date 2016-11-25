@@ -1,10 +1,11 @@
 require_relative('../db/sqlrunner')
 
 class Pet
+    attr_reader :entry
     def initialize( options )
         @name = options['name']
         @species = options['species']
-        @entry = options['entry']
+        @entry = Date.parse(options['entry'])
 
         @exit = options['exit'] if options['exit']
         @id = options['id'].to_i if options['id']
@@ -43,6 +44,4 @@ class Pet
 
         return result.map { |pet| Pet.new(pet) }
     end
-
-    
 end
