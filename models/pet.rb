@@ -8,6 +8,7 @@ class Pet
         @species = options['species']
         @entry = Date.parse(options['entry'])
 
+        @exit = nil
         @exit = Date.parse(options['exit']) if options['exit']
         @id = options['id'].to_i if options['id']
         @owner_id = options['owner_id'].to_i if options['owner_id']
@@ -33,13 +34,20 @@ class Pet
     end
 
     def update()
+        return unless @id
         sql = "
         UPDATE pets
-        (owner_id, exit)
+        SET (owner_id)
         =
-        (#{@owner_id}, '#{@exit}')
+        (#{@owner_id})
         WHERE id = #{@id}
         ;"
+
+        SqlRunner.run(sql)
+    end
+
+    def owner()
+        return Customer.find(@owner_id) if @owner_id
     end
 
     def self.find(id)
