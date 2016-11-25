@@ -12,13 +12,12 @@ class Customer
         INSERT INTO customers
         (name)
         VALUES
-        (#{@name})
-        returning *;"
+        ('#{@name}')
+        returning *
+        ;"
 
         result = SqlRunner.run(sql)
 
         @id = result[0]['id']
     end
-end
-    
 end
