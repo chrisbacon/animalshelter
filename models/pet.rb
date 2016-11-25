@@ -25,5 +25,15 @@ class Pet
         @id = result[0]['id']
     end
 
+    def self.find(id)
+        sql = 
+        "SELECT * FROM pets
+        WHERE id = #{id}"
+
+        result = SqlRunner.run(sql)
+
+        return Pet.new(result[0])
+    end
+
     
 end
