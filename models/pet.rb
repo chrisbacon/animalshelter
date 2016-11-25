@@ -28,11 +28,20 @@ class Pet
     def self.find(id)
         sql = 
         "SELECT * FROM pets
-        WHERE id = #{id}"
+        WHERE id = #{id};"
 
         result = SqlRunner.run(sql)
 
         return Pet.new(result[0])
+    end
+
+    def self.all()
+        sql = 
+        "SELECT * FROM pets;"
+
+        result = SqlRunner.run(sql)
+
+        return result.map { |pet| Pet.new(pet) }
     end
 
     
