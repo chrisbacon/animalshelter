@@ -22,7 +22,8 @@ class Customer
     end
 
     def adopt(pet)
-        pet.get_adopted(@id)
+        pet.owner_id = @id
+        pet.update()
     end
 
     def self.find(id)

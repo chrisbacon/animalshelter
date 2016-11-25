@@ -14,3 +14,8 @@ get '/pets/:id/adopt' do
     puts @customers
     erb(:adopt)
 end
+
+post '/pets/' do
+    pet = Pet.find(params['pet_id'].to_i)
+    
+end
