@@ -32,6 +32,9 @@ class Pet
         @id = result[0]['id']
     end
 
+    def update()
+    end
+
     def self.find(id)
         sql = 
         "SELECT * FROM pets
