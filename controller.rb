@@ -9,7 +9,8 @@ get '/pets' do
 end
 
 get '/pets/:id/adopt' do
-    @pet = Pet.find(params['id'])
+    @pet = Pet.find(params['id'].to_i)
     @customers = Customer.all()
+    puts @customers
     erb(:adopt)
 end

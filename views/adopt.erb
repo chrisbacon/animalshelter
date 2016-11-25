@@ -1,0 +1,17 @@
+<h1>Pet Adoption Form</h1>
+
+<form>
+    <label>
+        <span>Pet to be adopted:</span> 
+        <input type="hidden" name="pet_id" value="<%= @pet.id %>"><%= @pet.name %>
+
+        <span>Customer:</span> 
+    </label>
+    <label>
+        <select>
+            <% for customer in @customers %>
+                <option value="<%= customer.id %>"><%= customer.name %></option> 
+            <% end %>
+        </select>
+    </label>
+</form>
