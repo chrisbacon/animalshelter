@@ -1,7 +1,7 @@
 require_relative('../db/sqlrunner')
 
 class Pet
-    attr_reader :entry
+    attr_reader :entry, :name, :species
     def initialize( options )
         @name = options['name']
         @species = options['species']

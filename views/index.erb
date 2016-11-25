@@ -1,9 +1,11 @@
 <h1>Pets</h1>
 
-<% for pet in @pets %>
-    <div class="pet">
-        <span>name: <%= pet.name %></span>
-        <span>species: <%= pet.species %></span>
-        <span>entry: <%= pet.entry %></span>
-    </div>
-<% end %>
+<div id="content">
+    <% for pet in @pets %>
+        <ul class="pet">
+            <li>name: <%= pet.name %></li>
+            <li>species: <%= pet.species %></li>
+            <li>entry: <%= pet.entry %></li>
+        </ul>
+    <% end %>
+</div>

@@ -1,0 +1,18 @@
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 33%;
+    list-style-type: none;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pet {
+    display: flex;
+    flex-direction: column;
+}
