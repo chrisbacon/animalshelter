@@ -1,4 +1,5 @@
 require_relative('../models/customer.rb')
+require_relative('../models/pet.rb')
 
 cust1 = Customer.new({'name' => 'Chris'})
 cust1.save()

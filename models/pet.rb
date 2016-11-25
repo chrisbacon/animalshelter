@@ -14,11 +14,15 @@ class Pet
     def save()
         sql = "
         INSERT INTO pets
-        (name, species, entry, exit)
+        (name, species, entry)
         VALUES
-        ('#{@name}', '#{@species}', '#{@entry}', '#{@exit}')
-        returning 
+        ('#{@name}', '#{@species}', '#{@entry}')
+        returning *
         ;"
+
+        result = SqlRunner.run(sql)
+
+        @id = result[0]['id']
     end
 
     
