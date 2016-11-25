@@ -3,11 +3,10 @@
 <form>
     <label>
         <span>Pet to be adopted:</span> 
-        <input type="hidden" name="pet_id" value="<%= @pet.id %>"><%= @pet.name %>
-
-        <span>Customer:</span> 
+        <input type="hidden" name="pet_id" value="<%= @pet.id %>"><%= @pet.name %>    
     </label>
     <label>
+        <span>Customer:</span> 
         <select>
             <% for customer in @customers %>
                 <option value="<%= customer.id %>"><%= customer.name %></option> 

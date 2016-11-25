@@ -21,3 +21,17 @@ nav ul {
     flex-direction: column;
     list-style-type: none;
 }
+
+form label {
+    display: block;
+}
+
+form label span {
+    display: inline-block;
+    width: 30%;
+    border-right: 2px black solid;
+}
+
+form select {
+    display: inline-block;
+}
