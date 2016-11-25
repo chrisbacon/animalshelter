@@ -18,7 +18,11 @@ class Pet
         minimum_stay = 10
         return (date - @entry) >= minimum_stay
     end
-    
+
+    def is_adoptable?
+        return is_adoptable_on?(Date.today)
+    end
+
     def save()
         sql = "
         INSERT INTO pets

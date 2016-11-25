@@ -6,6 +6,13 @@
             <li>name: <%= pet.name %></li>
             <li>species: <%= pet.species %></li>
             <li>entry: <%= pet.entry %></li>
+            <% if pet.owner %>
+            <li>owner: <%= pet.owner.name %></li>
+            <% else %>
+            <li>available: <%= pet.is_adoptable? %></li>
+            <% end %>
+            
+
         </ul>
     <% end %>
 </div>
