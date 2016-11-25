@@ -7,7 +7,7 @@ class Pet
         @species = options['species']
         @entry = Date.parse(options['entry'])
 
-        @exit = options['exit'] if options['exit']
+        @exit = Date.parse(options['exit']) if options['exit']
         @id = options['id'].to_i if options['id']
         @owner_id = options['owner_id'].to_i if options['owner_id']
     end
