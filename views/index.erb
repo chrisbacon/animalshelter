@@ -1,17 +1,19 @@
-<h1>Pets</h1>
+<div id='content'>
+    <h1>Pets</h1>
 
-<div id="content">
-    <% for pet in @pets %>
-        <ul class="pet">
-            <li>Name: <%= pet.name %></li>
-            <li>Species: <%= pet.species %></li>
-            <li>Date rescued: <%= pet.entry %></li>
-            <% if pet.owner %>
-            <li>Date adopted: <%= pet.exit %></li>
-            <li>Owner: <%= pet.owner.name %></li>
-            <% else %>
-            <li>Status: <%= pet.adoption_status %></li>
-            <% end %>
-        </ul>
-    <% end %>
+    <div id="grid">
+        <% for pet in @pets %>
+            <ul class="pet">
+                <li>Name: <%= pet.name %></li>
+                <li>Species: <%= pet.species %></li>
+                <li>Date rescued: <%= pet.entry %></li>
+                <% if pet.owner %>
+                <li>Date adopted: <%= pet.exit %></li>
+                <li>Owner: <%= pet.owner.name %></li>
+                <% else %>
+                <li>Status: <%= pet.adoption_status %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
 </div>
