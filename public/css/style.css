@@ -33,13 +33,15 @@ section h1 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content: flex-start;
+    align-content: space-between;
+    align-items: stretch;
 }
 
 .pet {
-    width: 30%;
+    min-width: 30%;
+    min-height: 7rem;
     border: 1px black solid;
-    padding: 0px;
+    padding: 1rem 0 0 1rem;
     display: flex;
     flex-direction: column;
     list-style-type: none;
