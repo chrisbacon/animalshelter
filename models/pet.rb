@@ -23,8 +23,8 @@ class Pet
     end
 
     def adoption_status
-        return "Ready for adoption!" if is_adoptable?
-        return "Needs to stay a bit longer."
+        return "Ready for adoption" if is_adoptable?
+        return "In observation"
     end
 
     def save()
