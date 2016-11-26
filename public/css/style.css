@@ -13,10 +13,14 @@ nav ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: center;
+    justify-content: space-between;
+    align-content: flex-start;
 }
 
 .pet {
+    width: 30%;
+    border: 1px black solid;
+    padding: 0px;
     display: flex;
     flex-direction: column;
     list-style-type: none;

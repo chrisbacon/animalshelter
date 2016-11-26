@@ -7,12 +7,11 @@
             <li>Species: <%= pet.species %></li>
             <li>Date rescued: <%= pet.entry %></li>
             <% if pet.owner %>
+            <li>Date adopted: <%= pet.exit %></li>
             <li>Owner: <%= pet.owner.name %></li>
             <% else %>
             <li>Status: <%= pet.adoption_status %></li>
             <% end %>
-            
-
         </ul>
     <% end %>
 </div>

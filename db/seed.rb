@@ -13,6 +13,7 @@ pet1 = Pet.new({
 pet1.save()
 
 pet1.owner_id = cust1.id
+pet1.exit = '2016-11-20'
 pet1.update()
 
 pet2 = Pet.new({
