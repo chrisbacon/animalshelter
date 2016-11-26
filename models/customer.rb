@@ -21,6 +21,11 @@ class Customer
         @id = result[0]['id']
     end
 
+    def pets()
+        return unless @id
+        return Pet.find_by_owner(@id)
+    end
+
     def self.find(id)
         sql = "
         SELECT * FROM customers
