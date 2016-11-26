@@ -82,6 +82,16 @@ class Pet
         return Pet.new(result[0])
     end
 
+    def self.find_by_owner(id)
+        sql = 
+        "SELECT * FROM pets
+        WHERE owner_id = #{id};"
+
+        result = SqlRunner.run(sql)
+
+        return result.map { |pet| Pet.new(pet) }
+    end
+
     def self.all()
         sql = 
         "SELECT * FROM pets;"
