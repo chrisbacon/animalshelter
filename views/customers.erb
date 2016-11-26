@@ -5,6 +5,13 @@
         <% for customer in @customers %>
             <ul class="grid_item">
                 <li>Name: <%= customer.name %></li>
+                <li>Pets: 
+                    <ul>
+                    <% for pet in customer.pets %>
+                        <li><%= pet.name %></li>
+                    <% end %>
+                    </ul>
+                </li>
             </ul>
         <% end %>
     </div>
