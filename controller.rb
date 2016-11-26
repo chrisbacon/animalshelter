@@ -6,7 +6,7 @@ require_relative('models/customer')
 
 get '/pets' do
     @pets = Pet.all()
-    erb(:index)
+    erb(:pets)
 end
 
 get '/pets/:id/adopt' do
@@ -22,4 +22,8 @@ post '/pets' do
     pet.exit = Date.today
     pet.update()
     redirect to '/pets'
+end
+
+get '/customers' do
+    @customers = Customer.all()
 end
