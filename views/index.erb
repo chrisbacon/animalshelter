@@ -12,6 +12,9 @@
                 <li>Owner: <%= pet.owner.name %></li>
                 <% else %>
                 <li>Status: <%= pet.adoption_status %></li>
+                    <% if pet.is_adoptable? %>
+                        <li><a href="/pets/<%= pet.id %>/adopt">Adopt pet</a></li>
+                    <% end %> 
                 <% end %>
             </ul>
         <% end %>
