@@ -4,6 +4,9 @@ require_relative('../models/pet.rb')
 cust1 = Customer.new({'name' => 'Chris'})
 cust1.save()
 
+cust2 = Customer.new({'name' => 'Calum'})
+cust2.save()
+
 pet1 = Pet.new({
     'name' => 'Muffin',
     'species' => 'Cat',
@@ -39,4 +42,12 @@ pet4 = Pet.new({
     })
 
 pet4.save()
+
+pet5 = Pet.new({
+    'name' => 'Ricardo',
+    'species' => 'Cockatiel',
+    'entry' => '2016-10-01'
+    })
+
+pet5.save()
 

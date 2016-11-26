@@ -4,14 +4,14 @@
     <div id="grid">
         <% for pet in @pets %>
             <ul class="grid_item">
-                <li>Name: <%= pet.name %></li>
-                <li>Species: <%= pet.species %></li>
-                <li>Admission Date: <%= pet.entry %></li>
+                <li><span>Name</span> <span><%= pet.name %></span></li>
+                <li><span>Species</span> <span><%= pet.species %></span></li>
+                <li><span>Admission Date</span> <span><%= pet.entry %></span></li>
                 <% if pet.owner %>
-                <li>Adoption Date: <%= pet.exit %></li>
-                <li>Owner: <%= pet.owner.name %></li>
+                <li><span>Adoption Date</span> <span><%= pet.exit %></span></li>
+                <li><span>Owner</span> <span><%= pet.owner.name %></span></li>
                 <% else %>
-                <li>Status: <%= pet.adoption_status %></li>
+                <li><span>Status</span> <span><%= pet.adoption_status %></span></li>
                     <% if pet.is_adoptable? %>
                         <li><a href="/pets/<%= pet.id %>/adopt">Adopt pet</a></li>
                     <% end %> 
