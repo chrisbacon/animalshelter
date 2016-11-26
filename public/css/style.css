@@ -47,13 +47,29 @@ section h1 {
     list-style-type: none;
 }
 
+.grid_item > li {
+    margin-bottom: 1rem;
+}
+
+.grid_item li span {
+    display: inline-block;
+    width: 20%;
+}
+
+.pet_list {
+    padding: 0;
+    display: inline-flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
 form label {
     display: block;
 }
 
 form label span {
     display: inline-block;
-    width: 30%;
+    width: 20%;
     border-right: 2px black solid;
 }
 

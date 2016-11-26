@@ -4,11 +4,11 @@
     <div id="grid">
         <% for customer in @customers %>
             <ul class="grid_item">
-                <li>Name: <%= customer.name %></li>
-                <li>Pets: 
-                    <ul>
+                <li><span>Name:</span> <%= customer.name %></li>
+                <li><span>Pets:</span> 
+                    <ul class="pet_list">
                     <% for pet in customer.pets %>
-                        <li><%= pet.name %></li>
+                        <li class="pet"><%= pet.name %></li>
                     <% end %>
                     </ul>
                 </li>
