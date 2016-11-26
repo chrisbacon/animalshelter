@@ -1,0 +1,22 @@
+<div id='content'>
+    <h1>Pets</h1>
+
+    <div id="grid">
+        <% for pet in @pets %>
+            <ul class="grid_item">
+                <li>Name: <%= pet.name %></li>
+                <li>Species: <%= pet.species %></li>
+                <li>Admission Date: <%= pet.entry %></li>
+                <% if pet.owner %>
+                <li>Adoption Date: <%= pet.exit %></li>
+                <li>Owner: <%= pet.owner.name %></li>
+                <% else %>
+                <li>Status: <%= pet.adoption_status %></li>
+                    <% if pet.is_adoptable? %>
+                        <li><a href="/pets/<%= pet.id %>/adopt">Adopt pet</a></li>
+                    <% end %> 
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
+</div>

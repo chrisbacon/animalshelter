@@ -37,7 +37,7 @@ section h1 {
     align-items: stretch;
 }
 
-.pet {
+.grid_item {
     min-width: 30%;
     min-height: 7rem;
     border: 1px black solid;
