@@ -26,4 +26,5 @@ end
 
 get '/customers' do
     @customers = Customer.all()
+    erb(:customers)
 end
