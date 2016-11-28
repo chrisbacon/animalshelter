@@ -95,4 +95,13 @@ class Pet
 
         return result.map { |pet| Pet.new(pet) }
     end
+
+    def self.delete(id)
+        sql = "
+        DELETE FROM pets
+        WHERE id = #{id}
+        ;"
+
+        SqlRunner.run(sql)
+    end
 end
