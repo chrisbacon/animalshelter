@@ -30,11 +30,8 @@
                 <% elsif pet.is_adoptable? %>
                 <li>
                     <span>Status:</span> 
-                    <span>Ready for adoption</span>
+                    <span><a href="/pets/<%= pet.id %>/adopt">Ready for adoption</a></span>
                 </li>
-                <li>
-                    <a href="/pets/<%= pet.id %>/adopt">Adopt pet</a>
-                </li> 
 
                 <% else %>
                 <li>

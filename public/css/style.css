@@ -17,6 +17,7 @@ section {
     border-bottom: 3px black solid;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    min-height: 70%;
 }
 
 section h1 {
