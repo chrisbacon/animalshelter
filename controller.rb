@@ -13,6 +13,13 @@ get '/pets/new' do
     erb(:new)
 end
 
+post '/pets' do
+    params['entry'] = Date.today.to_s
+    new_pet = Pet.new(params)
+    new_pet.save()
+    redirect to '/pets'
+end
+
 get '/pets/:id/adopt' do
     @pet = Pet.find(params['id'].to_i)
     @customers = Customer.all()
