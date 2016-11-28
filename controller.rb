@@ -16,7 +16,8 @@ get '/pets/:id/adopt' do
 end
 
 get '/pets/:id' do
-    
+    @pet = Pet.find(params['id'].to_i)
+    erb(:show)
 end
 
 post '/pets' do
