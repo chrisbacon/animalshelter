@@ -8,6 +8,8 @@ get '/customers/new' do
 end
 
 post '/customers' do
+    cust = Customer.new(params)
+    cust.save()
     redirect to '/customers'
 end
 
