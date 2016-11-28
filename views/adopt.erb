@@ -1,6 +1,6 @@
 <h1>Pet Adoption Form</h1>
 
-<form action="/pets" method="post">
+<form action="/pets/<%= @pet.id %>" method="post">
     <label>
         <span>Pet to be adopted:</span> 
         <input type="hidden" name="pet_id" value="<%= @pet.id %>"><%= @pet.name %>    

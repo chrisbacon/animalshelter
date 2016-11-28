@@ -9,6 +9,9 @@ get '/pets' do
     erb(:pets)
 end
 
+get '/pets/new' do
+end
+
 get '/pets/:id/adopt' do
     @pet = Pet.find(params['id'].to_i)
     @customers = Customer.all()
@@ -25,7 +28,7 @@ get '/pets/:id' do
     erb(:show)
 end
 
-post '/pets' do
+post '/pets/:id' do
     pet = Pet.find(params['pet_id'].to_i)
     customer = Customer.find(params['customer_id'].to_i)
     pet.owner_id = customer.id
