@@ -37,6 +37,15 @@ class Customer
         return Customer.new(result[0])
     end
 
+    def self.delete(id)
+        sql = "
+        DELETE FROM customers
+        WHERE id = #{id}
+        ;"
+
+        SqlRunner.run(sql)
+    end
+
     def self.all()
         sql = "
         SELECT * FROM customers
