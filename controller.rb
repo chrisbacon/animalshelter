@@ -15,6 +15,11 @@ get '/pets/:id/adopt' do
     erb(:adopt)
 end
 
+get '/pets/:id/delete' do
+    Pet.delete(params['id'].to_i)
+    redirect to '/pets'
+end
+
 get '/pets/:id' do
     @pet = Pet.find(params['id'].to_i)
     erb(:show)
