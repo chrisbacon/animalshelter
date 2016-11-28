@@ -22,11 +22,6 @@ class Pet
         return is_adoptable_on?(Date.today)
     end
 
-    def adoption_status
-        return "Ready for adoption" if is_adoptable?
-        return "In observation"
-    end
-
     def save()
         #prepare optional values for SQL string
         owner_id_value = "NULL"
