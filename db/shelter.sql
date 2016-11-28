@@ -12,5 +12,5 @@ CREATE TABLE pets (
     species VARCHAR(255),
     entry DATE,
     exit DATE,
-    owner_id INT8 references customers(id)
+    owner_id INT8 references customers(id) ON DELETE SET NULL
 );
