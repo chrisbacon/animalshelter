@@ -15,6 +15,10 @@ get '/pets/:id/adopt' do
     erb(:adopt)
 end
 
+get '/pets/:id' do
+    
+end
+
 post '/pets' do
     pet = Pet.find(params['pet_id'].to_i)
     customer = Customer.find(params['customer_id'].to_i)
