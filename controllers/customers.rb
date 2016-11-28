@@ -1,6 +1,6 @@
 get '/customers' do
     @customers = Customer.all()
-    erb(:customers)
+    erb(:"customers/index")
 end
 
 get '/customers/:id/delete' do

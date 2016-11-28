@@ -1,10 +1,10 @@
 get '/pets' do
     @pets = Pet.all()
-    erb(:pets)
+    erb(:"pets/index")
 end
 
 get '/pets/new' do
-    erb(:new)
+    erb(:"pets/new")
 end
 
 post '/pets' do
@@ -14,10 +14,9 @@ post '/pets' do
     redirect to '/pets'
 end
 
-get '/pets/:id/adopt' do
+get '/pets/:id' do
     @pet = Pet.find(params['id'].to_i)
-    @customers = Customer.all()
-    erb(:adopt)
+    erb(:"pets/show")
 end
 
 get '/pets/:id/delete' do
@@ -25,9 +24,10 @@ get '/pets/:id/delete' do
     redirect to '/pets'
 end
 
-get '/pets/:id' do
+get '/pets/:id/adopt' do
     @pet = Pet.find(params['id'].to_i)
-    erb(:show)
+    @customers = Customer.all()
+    erb(:"pets/adopt")
 end
 
 post '/pets/:id' do
