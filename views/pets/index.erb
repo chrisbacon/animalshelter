@@ -32,13 +32,17 @@
                     <span>Status:</span> 
                     <span><a href="/pets/<%= pet.id %>/adopt">Ready for adoption</a></span>
                 </li>
-
+                <li class="empty-line"></li>
                 <% else %>
                 <li>
                     <span>Status:</span> 
                     <span>In observation</span>
                 </li>
+                <li class="empty-line"></li>
                 <% end %>
+                <li>
+                    <a href="/pets/<%= pet.id %>">Show</a>
+                </li>
             </ul>
         <% end %>
     </div>
