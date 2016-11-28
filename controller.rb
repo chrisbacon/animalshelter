@@ -10,6 +10,7 @@ get '/pets' do
 end
 
 get '/pets/new' do
+    erb(:new)
 end
 
 get '/pets/:id/adopt' do
