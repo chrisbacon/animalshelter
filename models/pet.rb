@@ -81,6 +81,10 @@ class Pet
         return Customer.find(@owner_id) if @owner_id
     end
 
+    def species()
+        return Species.find(@species_id) if @species_id
+    end
+
     def self.find(id)
         sql = 
         "SELECT * FROM pets
