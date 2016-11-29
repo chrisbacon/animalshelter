@@ -1,6 +1,8 @@
 get '/pets' do
     @pets = Pet.all()
-    erb(:"pets/index")
+    erb(:"pets/index", :layout => :layout) do
+        erb(:"pets/card")
+    end
 end
 
 get '/pets/new' do
