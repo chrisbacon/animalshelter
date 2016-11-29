@@ -1,27 +1,25 @@
-<div id='content'>
-    <h1>Customers</h1>
+<h1>Customers</h1>
 
-    <div id="grid">
-        <% for customer in @customers %>
-            <ul class="grid_item">
-                <li>
-                    <span>Name:</span> 
-                    <span><%= customer.name %></span>
-                </li>
-                <li>
-                    <span>Pets:</span> 
-                    <ul class="pet_list">
-                    <% for pet in customer.pets %>
-                        <li class="pet">
-                            <%= pet.name %>    
-                        </li>
-                    <% end %>
-                    </ul>
-                </li>
-                <li>
-                    <a href="/customers/<%= customer.id %>/delete">Remove record</a>
-                </li>
-            </ul>
-        <% end %>
-    </div>
+<div id="grid">
+    <% for customer in @customers %>
+        <ul class="grid_item">
+            <li>
+                <span>Name:</span> 
+                <span><%= customer.name %></span>
+            </li>
+            <li>
+                <span>Pets:</span> 
+                <ul class="pet_list">
+                <% for pet in customer.pets %>
+                    <li class="pet">
+                        <%= pet.name %>    
+                    </li>
+                <% end %>
+                </ul>
+            </li>
+            <li>
+                <a href="/customers/<%= customer.id %>/delete">Remove record</a>
+            </li>
+        </ul>
+    <% end %>
 </div>
