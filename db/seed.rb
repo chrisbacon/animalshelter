@@ -1,5 +1,14 @@
 require_relative('../models/customer.rb')
 require_relative('../models/pet.rb')
+require_relative('../models/species.rb')
+
+s1 = Species.new({'name' => 'Cat'})
+s2 = Species.new({'name' => 'Dog'})
+s3 = Species.new({'name' => 'Rabbit'})
+s4 = Species.new({'name' => 'Guinea Pig'})
+s5 = Species.new({'name' => 'Cockatiel'})
+
+s1.save
 
 cust1 = Customer.new({'name' => 'Chris'})
 cust1.save()

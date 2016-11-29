@@ -1,12 +1,25 @@
 require_relative('../db/sqlrunner')
 
 class Species
-	attr_reader :name
+	attr_reader :name, :id
 
 	def initialize( options )
 		@name = options['name']
 		
-		@id = options['id'] if options['id']
+		@id = options['id'].to_i if options['id']
+	end
+
+	def save()
+		sql = "
+		INSERT INTO species
+		(name)
+		VALUES
+		('#{@name}')
+		returning *
+		;"
+
+		result = SqlRunner.run(sql)
+		@id = result[0]['id']
 	end
 	
 	def self.all()
@@ -14,7 +27,7 @@ class Species
 		SELECT * FROM species
 		;"
 
-		result = SqlRunner(sql)
+		result = SqlRunner.run(sql)
 
 		return result.map { |s| Species.new(s) }
 	end
