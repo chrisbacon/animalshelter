@@ -2,5 +2,8 @@
 
 <ul class="grid_item">
     <%= yield %>
+    <li>
+        <a href="/pets/<%= @pet.id %>/delete">Delete record</a>
+    </li>
 </ul>
 
