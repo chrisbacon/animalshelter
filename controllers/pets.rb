@@ -9,7 +9,10 @@ get '/pets/filter/:id' do
     id = params['id'].to_i
     @selected = Hash.new(false)
     @selected[id] = true
-    @species = Species.find(id)
+
+    @all_species = Species.all()
+    @species = @all_species.select { |s| s.id == id }[0]
+
     @pets = Pet.find_all_by_species(id)
     erb(:"pets/filter", :layout => :layout) do
         erb(:"pets/card")

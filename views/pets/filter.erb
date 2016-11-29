@@ -1,6 +1,12 @@
-<% if @selected[2] %>
-	Hello
-<% end %>
+<nav>
+	<ul>
+		<% for species in @all_species %>
+		<li>
+			<%= species.name%>
+		</li>
+		<% end %>
+	</ul>
+</nav>
 
 <h1><%= @species.group_name %></h1>
 
