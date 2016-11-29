@@ -1,20 +1,20 @@
 require_relative('../db/sqlrunner')
 
 class Species
-	attr_reader :name, :id
+	attr_reader :name, :group_name, :id
 
 	def initialize( options )
 		@name = options['name']
-		
+		@group_name = options['group_name']
 		@id = options['id'].to_i if options['id']
 	end
 
 	def save()
 		sql = "
 		INSERT INTO species
-		(name)
+		(name, group_name)
 		VALUES
-		('#{@name}')
+		('#{@name}', '#{@group_name}')
 		returning *
 		;"
 

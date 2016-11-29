@@ -9,7 +9,8 @@ CREATE TABLE customers (
 
 CREATE TABLE species (
 	id SERIAL8 primary key,
-	name VARCHAR(255)
+	name VARCHAR(255),
+    group_name VARCHAR(255)
 );
 
 CREATE TABLE pets (
