@@ -1,38 +1,3 @@
 <h1><%= @pet.name %></h1>
 
-<ul class="grid_item">
-    <li>
-        <span>Species:</span> 
-        <span><%= @pet.species %></span>
-    </li>
-    <li>
-        <span>Admission Date:</span> 
-        <span><%= @pet.entry %></span>
-    </li>
-
-    <% if @pet.owner %>
-    <li>
-        <span>Adoption Date:</span> 
-        <span><%= @pet.exit %></span>
-    </li>
-    <li>
-        <span>Owner:</span> 
-        <span><%= @pet.owner.name %></span>
-    </li>
-
-    <% elsif @pet.is_adoptable? %>
-    <li>
-        <span>Status:</span> 
-        <span><a href="/pets/<%= @pet.id %>/adopt">Ready for adoption</a></span>
-    </li>
-
-    <% else %>
-    <li>
-        <span>Status:</span> 
-        <span>In observation</span>
-    </li>
-    <% end %>
-    <li>
-        <a href="/pets/<%= @pet.id %>/delete">Remove record</a>
-    </li>
-</ul>
+<%= yield %>

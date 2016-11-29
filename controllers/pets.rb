@@ -23,7 +23,9 @@ end
 
 get '/pets/:id' do
     @pet = Pet.find(params['id'].to_i)
-    erb(:"pets/show")
+    erb(:"pets/show", :layout => :layout) do
+        erb(:"pets/card")
+    end
 end
 
 get '/pets/:id/delete' do
