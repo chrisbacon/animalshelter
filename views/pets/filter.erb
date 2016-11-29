@@ -1,0 +1,12 @@
+<h1><%= @species.name %>s</h1>
+
+<div id="grid">
+    <% for @pet in @pets %>
+        <ul class="grid_item">
+            <%= yield %>
+            <li>
+                <a href="/pets/<%= @pet.id %>">Show</a>
+            </li>
+        </ul>
+    <% end %>
+</div> 

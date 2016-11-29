@@ -5,6 +5,15 @@ get '/pets' do
     end
 end
 
+get '/pets/filter/:id' do
+    id = params['id'].to_i
+    @species = Species.find(id)
+    @pets = Pet.find_all_by_species(id)
+    erb(:"pets/filter", :layout => :layout) do
+        erb(:"pets/card")
+    end
+end
+
 get '/pets/new' do
     @species = Species.all()
     erb(:"pets/new")

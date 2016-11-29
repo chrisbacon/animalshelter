@@ -105,6 +105,17 @@ class Pet
         return result.map { |pet| Pet.new(pet) }
     end
 
+    def self.find_all_by_species(id)
+        sql ="
+        SELECT * FROM pets
+        WHERE species_id = #{id}
+        ;"
+
+        result = SqlRunner.run(sql)
+
+        return result.map { |pet| Pet.new(pet) }
+    end
+
     def self.all()
         sql = 
         "SELECT * FROM pets;"
