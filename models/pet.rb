@@ -5,7 +5,7 @@ class Pet
     attr_accessor :owner_id, :exit
     def initialize( options )
         @name = options['name']
-        @species_id = options['species_id_id'].to_i
+        @species_id = options['species_id'].to_i
         @entry = Date.parse(options['entry'])
 
         @exit = Date.parse(options['exit']) if options['exit']
