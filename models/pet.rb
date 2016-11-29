@@ -63,6 +63,20 @@ class Pet
         SqlRunner.run(sql)
     end
 
+    def to_json()
+        hash = {
+            :name => @name,
+            :species => @species,
+            :entry => @entry
+        }
+
+        hash[:exit] = @exit if @exit
+        hash[:id] = @id if @id
+        hash[:owner_id] = @owner_id if @owner_id
+
+        return hash.to_json
+    end
+
     def owner()
         return Customer.find(@owner_id) if @owner_id
     end
