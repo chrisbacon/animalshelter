@@ -1,11 +1,11 @@
 require_relative('../db/sqlrunner')
 
 class Pet
-    attr_reader :entry, :name, :species, :id
+    attr_reader :entry, :name, :species_id, :id
     attr_accessor :owner_id, :exit
     def initialize( options )
         @name = options['name']
-        @species = options['species']
+        @species_id = options['species_id_id'].to_i
         @entry = Date.parse(options['entry'])
 
         @exit = Date.parse(options['exit']) if options['exit']
@@ -32,9 +32,9 @@ class Pet
 
         sql = "
         INSERT INTO pets
-        (name, species, entry, exit, owner_id)
+        (name, species_id, entry, exit, owner_id)
         VALUES
-        ('#{@name}', '#{@species}', '#{@entry}', #{exit_value}, #{owner_id_value})
+        ('#{@name}', #{@species_id}, '#{@entry}', #{exit_value}, #{owner_id_value})
         returning *
         ;"
 
@@ -54,9 +54,9 @@ class Pet
 
         sql = "
         UPDATE pets
-        SET (name, species, entry, exit, owner_id)
+        SET (name, species_id, entry, exit, owner_id)
         =
-        ('#{@name}', '#{@species}', '#{@entry}', #{exit_value}, #{owner_id_value})
+        ('#{@name}', #{@species_id}, '#{@entry}', #{exit_value}, #{owner_id_value})
         WHERE id = #{@id}
         ;"
 
@@ -66,7 +66,7 @@ class Pet
     def to_json()
         hash = {
             :name => @name,
-            :species => @species,
+            :species_id => @species_id,
             :entry => @entry
         }
 
