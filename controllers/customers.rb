@@ -1,6 +1,8 @@
 get '/customers' do
     @customers = Customer.all()
-    erb(:"customers/index")
+    erb(:"customers/index", :layout => :layout) do
+        erb(:"customers/card")
+    end
 end
 
 get '/customers/new' do
