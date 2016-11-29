@@ -30,7 +30,7 @@ class Species
 
 		result = SqlRunner.run(sql)
 
-		return Species(result[0])
+		return Species.new(result[0])
 	end
 	
 	def self.all()
