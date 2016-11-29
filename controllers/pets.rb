@@ -6,6 +6,7 @@ get '/pets' do
 end
 
 get '/pets/new' do
+    @species = Species.all()
     erb(:"pets/new")
 end
 

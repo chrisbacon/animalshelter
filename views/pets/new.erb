@@ -7,7 +7,11 @@
     </label>
     <label>
         <span>Species:</span> 
-        <input type="text" name="species"/>  
+        <select name="species_id">
+        <% for spec in @species %>
+        	<option value = <%= spec.id %>><%= spec.name %></option>
+        <% end%>
+    	</select>
     </label>
     <input type="submit" value="Add">
 </form>
