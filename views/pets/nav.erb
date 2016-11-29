@@ -1,0 +1,12 @@
+<nav>
+	<ul>
+		<li>
+			<a href="/pets" class="<%= @selected['all']%>">All</a>
+		<li>
+		<% for species in @all_species %>
+		<li class="<%= @selected[species.id]%>">
+			<a href="/pets/filter/<%= species.id %>"><%= species.name%></a>
+		</li>
+		<% end %>
+	</ul>
+</nav>
