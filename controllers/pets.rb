@@ -1,5 +1,10 @@
 get '/pets' do
     @pets = Pet.all()
+
+    @selected = Hash.new('unselected')
+    @selected['all'] = 'selected'
+    @all_species = Species.all()
+    
     erb(:"pets/index", :layout => :layout) do
         erb(:"pets/card")
     end

@@ -1,7 +1,7 @@
 <nav>
 	<ul>
-		<li>
-			<a href="/pets" class="<%= @selected['all']%>">All</a>
+		<li class="<%= @selected['all']%>">
+			<a href="/pets">All</a>
 		<li>
 		<% for species in @all_species %>
 		<li class="<%= @selected[species.id]%>">
