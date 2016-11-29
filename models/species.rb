@@ -9,5 +9,13 @@ class Species
 		@id = options['id'] if options['id']
 	end
 	
-	
+	def self.all()
+		sql = "
+		SELECT * FROM species
+		;"
+
+		result = SqlRunner(sql)
+
+		return result.map { |s| Species.new(s) }
+	end
 end
