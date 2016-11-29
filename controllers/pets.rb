@@ -14,6 +14,13 @@ post '/pets' do
     redirect to '/pets'
 end
 
+get '/pets.json' do
+    content_type :json
+    pets = Pet.all()
+    pets.map!{ |pet| pet.to_json }
+    return pets.to_json
+end
+
 get '/pets/:id' do
     @pet = Pet.find(params['id'].to_i)
     erb(:"pets/show")
