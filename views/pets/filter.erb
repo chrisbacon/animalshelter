@@ -2,7 +2,7 @@
 	<ul>
 		<% for species in @all_species %>
 		<li>
-			<%= species.name%>
+			<a href="/pets/filter/<%= species.id %>" class="<%= @selected[species.id]%>"><%= species.name%></a>
 		</li>
 		<% end %>
 	</ul>

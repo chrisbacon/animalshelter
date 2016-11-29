@@ -26,6 +26,12 @@ section h1 {
     margin: 0;
 }
 
+a.selected {
+    background: black;
+    color: white;
+    border-radius: 3px;
+}
+
 #content {
     width: 80%;
     margin: auto;

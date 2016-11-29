@@ -7,8 +7,8 @@ end
 
 get '/pets/filter/:id' do
     id = params['id'].to_i
-    @selected = Hash.new(false)
-    @selected[id] = true
+    @selected = Hash.new('unselected')
+    @selected[id] = 'selected'
 
     @all_species = Species.all()
     @species = @all_species.select { |s| s.id == id }[0]
