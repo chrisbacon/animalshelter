@@ -1,12 +1,12 @@
 require_relative('../models/customer.rb')
 require_relative('../models/pet.rb')
-require_relative('../models/species.rb')
+require_relative('../models/kind.rb')
 
-s1 = Species.new({'name' => 'Cat', 'group_name' => 'Cats'})
-s2 = Species.new({'name' => 'Dog', 'group_name' => 'Dogs'})
-s3 = Species.new({'name' => 'Rabbit', 'group_name' => 'Rabbits'})
-s4 = Species.new({'name' => 'Guinea Pig', 'group_name' => 'Guinea Pigs'})
-s5 = Species.new({'name' => 'Cockatiel', 'group_name' => 'Cockatiels'})
+s1 = Kind.new({'name' => 'Cat', 'group_name' => 'Cats'})
+s2 = Kind.new({'name' => 'Dog', 'group_name' => 'Dogs'})
+s3 = Kind.new({'name' => 'Rabbit', 'group_name' => 'Rabbits'})
+s4 = Kind.new({'name' => 'Guinea Pig', 'group_name' => 'Guinea Pigs'})
+s5 = Kind.new({'name' => 'Cockatiel', 'group_name' => 'Cockatiels'})
 
 s1.save()
 s2.save()
@@ -22,7 +22,7 @@ cust2.save()
 
 pet1 = Pet.new({
     'name' => 'Muffin',
-    'species_id' => s1.id,
+    'kind_id' => s1.id,
     'entry' => '2016-11-19'
     })
 
@@ -34,7 +34,7 @@ pet1.update()
 
 pet2 = Pet.new({
     'name' => 'Austin',
-    'species_id' => s2.id,
+    'kind_id' => s2.id,
     'entry' => '2016-11-01'
     })
 
@@ -42,7 +42,7 @@ pet2.save()
 
 pet3 = Pet.new({
     'name' => 'Peter',
-    'species_id' => s3.id,
+    'kind_id' => s3.id,
     'entry' => '2016-11-23'
     })
 
@@ -50,7 +50,7 @@ pet3.save()
 
 pet4 = Pet.new({
     'name' => 'Chocolate Chip',
-    'species_id' => s4.id,
+    'kind_id' => s4.id,
     'entry' => '2016-10-31'
     })
 
@@ -58,7 +58,7 @@ pet4.save()
 
 pet5 = Pet.new({
     'name' => 'Ricardo',
-    'species_id' => s5.id,
+    'kind_id' => s5.id,
     'entry' => '2016-10-01'
     })
 

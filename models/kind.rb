@@ -1,6 +1,6 @@
 require_relative('../db/sqlrunner')
 
-class Species
+class Kind
 	attr_reader :name, :group_name, :id
 
 	def initialize( options )
@@ -11,7 +11,7 @@ class Species
 
 	def save()
 		sql = "
-		INSERT INTO species
+		INSERT INTO kinds
 		(name, group_name)
 		VALUES
 		('#{@name}', '#{@group_name}')
@@ -24,22 +24,22 @@ class Species
 
 	def self.find(id)
 		sql = "
-		SELECT * FROM species
+		SELECT * FROM kinds
 		WHERE id = #{id}
 		;"
 
 		result = SqlRunner.run(sql)
 
-		return Species.new(result[0])
+		return Kinds.new(result[0])
 	end
 	
 	def self.all()
 		sql = "
-		SELECT * FROM species
+		SELECT * FROM kinds
 		;"
 
 		result = SqlRunner.run(sql)
 
-		return result.map { |s| Species.new(s) }
+		return result.map { |s| Kinds.new(s) }
 	end
 end

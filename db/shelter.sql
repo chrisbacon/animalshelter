@@ -1,5 +1,5 @@
 DROP TABLE pets;
-DROP TABLE species;
+DROP TABLE kinds;
 DROP TABLE customers;
 
 CREATE TABLE customers (
@@ -7,7 +7,7 @@ CREATE TABLE customers (
     name VARCHAR(255)
 );
 
-CREATE TABLE species (
+CREATE TABLE kinds (
 	id SERIAL8 primary key,
 	name VARCHAR(255),
     group_name VARCHAR(255)
@@ -16,7 +16,7 @@ CREATE TABLE species (
 CREATE TABLE pets (
     id SERIAL8 primary key,
     name VARCHAR(255),
-    species_id INT8 references species(id) ON DELETE CASCADE,
+    kind_id INT8 references kinds(id) ON DELETE CASCADE,
     entry DATE,
     exit DATE,
     owner_id INT8 references customers(id) ON DELETE SET NULL
