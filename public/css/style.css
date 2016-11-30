@@ -10,6 +10,11 @@ a {
     text-decoration: none;
 }
 
+ul {
+    padding:0;
+    margin:0;
+}
+
 .grid_item a {
     color: #712da0;
     text-decoration: underline
@@ -39,6 +44,9 @@ nav ul {
 
 section nav {
     width: 20rem;
+    padding: 0;
+    border-bottom: 3px solid black;
+    margin-bottom: 8px;
 }
 
 nav a {
@@ -51,21 +59,19 @@ nav ul li a:hover {
     border-radius: 3px;
 }
 
-li.selected {
-    background: #712da0;
-    color: white;
-    border-radius: 3px;
-}
 
 li.selected a {
     color: white;
+    background: #712da0;
+    color: white;
+    border-radius: 3px;
 }
 
 li.selected a:visited {
     color: white;
 }
 
-li.selected:hover {
+li.selected a:hover {
     background: black;
     color: white;
 }
@@ -103,7 +109,7 @@ section {
 }
 
 section h1 {
-    margin: 0;
+    margin: 1rem 0 0 0;
 }
 
 
