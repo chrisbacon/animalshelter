@@ -3,7 +3,7 @@
 <div id="grid">
     <% for @customer in @customers %>
         <ul class="grid_item">
-            <%= yield %>
+            <%= erb :"customers/card" %>
         </ul>
     <% end %>
 </div>

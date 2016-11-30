@@ -5,9 +5,7 @@ get '/pets' do
     @selected['all'] = 'selected'
     @all_species = Species.all()
     
-    erb(:"pets/index", :layout => :layout) do
-        erb(:"pets/card")
-    end
+    erb(:"pets/index")
 end
 
 get '/pets/filter/:id' do
@@ -19,9 +17,7 @@ get '/pets/filter/:id' do
     @species = @all_species.select { |s| s.id == id }[0]
 
     @pets = Pet.find_all_by_species(id)
-    erb(:"pets/filter", :layout => :layout) do
-        erb(:"pets/card")
-    end
+    erb(:"pets/filter")
 end
 
 get '/pets/new' do
@@ -45,9 +41,7 @@ end
 
 get '/pets/:id' do
     @pet = Pet.find(params['id'].to_i)
-    erb(:"pets/show", :layout => :layout) do
-        erb(:"pets/card")
-    end
+    erb(:"pets/show")
 end
 
 get '/pets/:id/delete' do

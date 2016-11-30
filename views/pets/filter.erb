@@ -4,7 +4,7 @@
 <div id="grid">
     <% for @pet in @pets %>
         <ul class="grid_item">
-            <%= yield %>
+            <%= erb :"pets/card" %>
             <li>
                 <a href="/pets/<%= @pet.id %>">Show</a>
             </li>
