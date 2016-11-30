@@ -14,6 +14,28 @@ nav ul {
     list-style-type: none;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header div div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header div h1 {
+    margin: 0.5rem 0 0.5rem auto;
+}
+
 section {
     border-top: 3px black solid;
     border-bottom: 3px black solid;
