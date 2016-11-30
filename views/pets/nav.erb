@@ -3,9 +3,9 @@
 		<li class="<%= @selected['all']%>">
 			<a href="/pets">All</a>
 		<li>
-		<% for species in @all_species %>
-		<li class="<%= @selected[species.id]%>">
-			<a href="/pets/filter/<%= species.id %>"><%= species.name%></a>
+		<% for kind in @kinds %>
+		<li class="<%= @selected[kind.id]%>">
+			<a href="/pets/filter/<%= kind.id %>"><%= kind.name%></a>
 		</li>
 		<% end %>
 	</ul>

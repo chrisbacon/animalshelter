@@ -105,10 +105,10 @@ class Pet
         return result.map { |pet| Pet.new(pet) }
     end
 
-    def self.find_all_by_species(id)
+    def self.find_all_by_kind(id)
         sql ="
         SELECT * FROM pets
-        WHERE species_id = #{id}
+        WHERE kind_id = #{id}
         ;"
 
         result = SqlRunner.run(sql)

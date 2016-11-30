@@ -30,7 +30,7 @@ class Kind
 
 		result = SqlRunner.run(sql)
 
-		return Kinds.new(result[0])
+		return Kind.new(result[0])
 	end
 	
 	def self.all()
@@ -40,6 +40,6 @@ class Kind
 
 		result = SqlRunner.run(sql)
 
-		return result.map { |s| Kinds.new(s) }
+		return result.map { |s| Kind.new(s) }
 	end
 end

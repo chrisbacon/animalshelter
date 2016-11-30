@@ -3,7 +3,7 @@ get '/pets' do
 
     @selected = Hash.new('unselected')
     @selected['all'] = 'selected'
-    @all_species = Species.all()
+    @kinds = Kind.all()
     
     erb(:"pets/index")
 end
@@ -13,15 +13,15 @@ get '/pets/filter/:id' do
     @selected = Hash.new('unselected')
     @selected[id] = 'selected'
 
-    @all_species = Species.all()
-    @species = @all_species.select { |s| s.id == id }[0]
+    @kinds = Kind.all()
+    @kind = @kinds.select { |kind| kind.id == id }[0]
 
-    @pets = Pet.find_all_by_species(id)
+    @pets = Pet.find_all_by_kind(id)
     erb(:"pets/filter")
 end
 
 get '/pets/new' do
-    @species = Species.all()
+    @kinds = Kind.all()
     erb(:"pets/new")
 end
 
