@@ -6,7 +6,7 @@
         <input type="text" name="name"/>  
     </label>
     <label>
-        <span>Species:</span> 
+        <span>Kind:</span> 
         <select name="kind_id">
         <% for kind in @kinds %>
         	<option value = <%= kind.id %>><%= kind.name %></option>

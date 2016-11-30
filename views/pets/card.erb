@@ -3,7 +3,7 @@
     <span><%= @pet.name %></span>
 </li>
 <li>
-    <span>Species:</span> 
+    <span>Kind:</span> 
     <span><%= @pet.kind.name %></span>
 </li>
 <li>
@@ -26,13 +26,11 @@
     <span>Status:</span> 
     <span><a href="/pets/<%= @pet.id %>/adopt">Ready for adoption</a></span>
 </li>
-<li class="empty-line"></li>
 
 <% else %>
 <li>
     <span>Status:</span> 
     <span>In observation</span>
 </li>
-<li class="empty-line"></li>
 
 <% end %>

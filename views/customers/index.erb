@@ -3,7 +3,11 @@
 <div id="grid">
     <% for @customer in @customers %>
         <ul class="grid_item">
-            <%= erb :"customers/card" %>
+            <ul class = "flex-col">
+                <%= erb :"customers/card" %>
+            </ul>
+            <a href="/customers/<%= @customer.id %>/delete">Remove record</a>
         </ul>
     <% end %>
+    
 </div>

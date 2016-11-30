@@ -4,15 +4,11 @@
 </li>
 <li>
     <span>Pets:</span> 
-    <ul class="pet_list">
+    <div class="pet_list">
     <% for pet in @customer.pets %>
         <li class="pet">
             <%= pet.name %>    
         </li>
-
     <% end %>
-    </ul>
-</li>
-<li>
-    <a href="/customers/<%= @customer.id %>/delete">Remove record</a>
+    </div>
 </li>
