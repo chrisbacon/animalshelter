@@ -24,6 +24,7 @@ header div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-content: center;
 }
 
 header div div {
@@ -33,7 +34,7 @@ header div div {
 }
 
 header div h1 {
-    margin: 0.5rem 0 0.5rem auto;
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 section {

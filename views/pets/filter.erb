@@ -3,11 +3,11 @@
 
 <div id="grid">
     <% for @pet in @pets %>
-        <ul class="grid_item">
-            <%= erb :"pets/card" %>
-            <li>
-                <a href="/pets/<%= @pet.id %>">Show</a>
-            </li>
-        </ul>
+        <div class="grid_item">
+            <ul class="flex-col">
+                <%= erb :"pets/card" %>
+            </ul>
+            <a href="/pets/<%= @pet.id %>">Show</a>
+        </div>
     <% end %>
 </div> 
