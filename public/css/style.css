@@ -3,6 +3,30 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 20px;
     font-size: 16px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.grid_item a {
+    color: #712da0;
+    text-decoration: underline
+}
+
+.grid_item a:visited {
+    color: #712da0;
+}
+
+header nav {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    width: 30rem;
+}
+
+header nav ul {
+    margin: 0;
 }
 
 nav ul {
@@ -10,11 +34,44 @@ nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 20rem;
     list-style-type: none;
 }
 
+section nav {
+    width: 20rem;
+}
+
+nav a {
+    color: black;
+}
+
+nav ul li a:hover {
+    background: #712da0;
+    color: white;
+    border-radius: 3px;
+}
+
+li.selected {
+    background: #712da0;
+    color: white;
+    border-radius: 3px;
+}
+
+li.selected a {
+    color: white;
+}
+
+li.selected a:visited {
+    color: white;
+}
+
+li.selected:hover {
+    background: black;
+    color: white;
+}
+
 header {
+    margin: 8px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,7 +91,7 @@ header div div {
 }
 
 header div h1 {
-    margin: 0.5rem 0 0.5rem 0;
+    margin: 0.5rem 0 0 0;
 }
 
 section {
@@ -49,11 +106,7 @@ section h1 {
     margin: 0;
 }
 
-li.selected {
-    background: black;
-    color: white;
-    border-radius: 3px;
-}
+
 
 #content {
     width: 80%;
@@ -103,10 +156,6 @@ li.selected {
     flex-direction: column;
     align-items: flex-end;
     list-style-type: none;
-}
-
-.empty-line{
-    height: 1.25rem;
 }
 
 form label {
